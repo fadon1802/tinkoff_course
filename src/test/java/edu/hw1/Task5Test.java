@@ -9,21 +9,21 @@ class Task5Test {
 
     @Test
     void isPalindromeDescendant() {
-        Assertions.assertEquals(Task5.isPalindromeDescendant(11211230), true);
+        Assertions.assertTrue(Task5.isPalindromeDescendant(11211230));
     }
 
     @Test
     void isPalindromeDescendant1() {
-        Assertions.assertEquals(Task5.isPalindromeDescendant(13001120), true);
+        Assertions.assertTrue(Task5.isPalindromeDescendant(13001120));
     }
 
     @Test
     void isPalindromeDescendant2() {
-        Assertions.assertEquals(Task5.isPalindromeDescendant(23336014), true);
+        Assertions.assertTrue(Task5.isPalindromeDescendant(23336014));
     }
 
     @Test
     void isPalindromeDescendant3() {
-        Assertions.assertEquals(Task5.isPalindromeDescendant(11), true);
+        Assertions.assertTrue(Task5.isPalindromeDescendant(11));
     }
 }

@@ -14,7 +14,7 @@ public class Task6 {
         Collections.sort(list);
         Collections.reverse(list);
 
-        var descNum = Integer.parseInt(String.join("", list));;
+        var descNum = Integer.parseInt(String.join("", list));
         var diff = descNum - ReverseNumber(descNum);
         if (diff == 6174)
             return 1;
