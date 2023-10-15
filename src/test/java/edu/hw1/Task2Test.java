@@ -10,17 +10,17 @@ class Task2Test {
     }
 
     @Test
-    void countDigits3(){
+    void countDigits3() {
         Assertions.assertEquals(Task2.countDigits(544), 3);
     }
 
     @Test
-    void countDigits1(){
+    void countDigits1() {
         Assertions.assertEquals(Task2.countDigits(0), 1);
     }
 
     @Test
-    void countDigits2(){
+    void countDigits2() {
         Assertions.assertEquals(Task2.countDigits(99), 2);
     }
 }

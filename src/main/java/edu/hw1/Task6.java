@@ -5,9 +5,10 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Task6 {
-    public static int countK(int number){
-        if (number < 1000 || number > 9999)
+    public static int countK(int number) {
+        if (number < 1000 || number > 9999) {
             return -1;
+        }
 
         var l = String.valueOf(number);
         var list = new ArrayList<>(Arrays.asList(l.split("")));
@@ -16,8 +17,9 @@ public class Task6 {
 
         var descNum = Integer.parseInt(String.join("", list));
         var diff = descNum - ReverseNumber(descNum);
-        if (diff == 6174)
+        if (diff == 6174) {
             return 1;
+        }
 
         return 1 + countK(diff);
     }

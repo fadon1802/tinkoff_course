@@ -12,7 +12,7 @@ class Task7Test {
 
     @Test
     void rotateRight2() {
-        Assertions.assertEquals(Task7.rotateRight(8, 32), 8, "Should work with big shift" );
+        Assertions.assertEquals(Task7.rotateRight(8, 32), 8, "Should work with big shift");
     }
 
     @Test
@@ -27,6 +27,6 @@ class Task7Test {
 
     @Test
     void rotateLeft3() {
-        Assertions.assertEquals(Task7.rotateLeft(16, 26), 1, "Should work with big shift" );
+        Assertions.assertEquals(Task7.rotateLeft(16, 26), 1, "Should work with big shift");
     }
 }
