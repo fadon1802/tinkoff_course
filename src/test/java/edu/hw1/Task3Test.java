@@ -1,8 +1,8 @@
 package edu.hw1;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class Task3Test {
 
@@ -24,5 +24,10 @@ class Task3Test {
     @Test
     void isNestable4() {
         assertFalse(Task3.isNestable(new int[] {1, 2, 3, 4}, new int[] {2, 3}));
+    }
+
+    @Test
+    void isNestable5() {
+        assertFalse(Task3.isNestable(new int[] {}, new int[] {}));
     }
 }

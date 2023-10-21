@@ -1,36 +1,31 @@
 package edu.hw1;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
 public class Task6 {
-    public static int countK(int number) {
-        if (number < 1000 || number > 9999) {
+    private Task6() {
+    }
+
+    private static final int KAPREKAR_NUM = 6174;
+    private static final int DENOMINATOR = 1111;
+    private static final int NEED_AMOUNT = 4;
+
+    public static int countK(String strNumber) {
+        if (strNumber.length() != NEED_AMOUNT | Integer.parseInt(strNumber) % DENOMINATOR == 0) {
             return -1;
         }
 
-        var l = String.valueOf(number);
-        var list = new ArrayList<>(Arrays.asList(l.split("")));
+        var list = Arrays.asList(strNumber.split(""));
         Collections.sort(list);
-        Collections.reverse(list);
-
         var descNum = Integer.parseInt(String.join("", list));
-        var diff = descNum - ReverseNumber(descNum);
-        if (diff == 6174) {
+        Collections.reverse(list);
+        var reversedNum = Integer.parseInt(String.join("", list));
+        var diff = reversedNum - descNum;
+        if (diff == KAPREKAR_NUM) {
             return 1;
         }
 
-        return 1 + countK(diff);
-    }
-
-    public static int ReverseNumber(int n) {
-        int result = 0;
-        while (n != 0) {
-            int remainder = n % 10;
-            result = result * 10 + remainder;
-            n = n / 10;
-        }
-        return result;
+        return 1 + countK(String.valueOf(diff));
     }
 }

@@ -1,22 +1,27 @@
 package edu.hw1;
 
 public class Task5 {
-    public static boolean isPalindromeDescendant(int number) {
-        var strNum = String.valueOf(number);
-        if (isPalindrome(number)) {
+    private Task5() {
+    }
+
+    private static final int TEN = 10;
+
+    public static boolean isPalindromeDescendant(String strNum) {
+        if (isPalindrome(Integer.parseInt(strNum))) {
             return true;
         } else if (strNum.length() > 1) {
             var sb = new StringBuilder();
             for (int i = 0; i < strNum.length() - 1; i += 2) {
-                sb.append(Integer.parseInt(String.valueOf(strNum.charAt(i))) +
-                    Integer.parseInt(String.valueOf(strNum.charAt(i + 1))));
+                int currentDigit = Integer.parseInt(String.valueOf(strNum.charAt(i)));
+                int nextDigit = Integer.parseInt(String.valueOf(strNum.charAt(i + 1)));
+                sb.append(currentDigit + nextDigit);
             }
 
-            var num = Integer.parseInt(sb.toString());
-            if (sb.toString().length() == 1) {
+            if (sb.length() == 1) {
                 return false;
             }
-            return isPalindromeDescendant(num);
+
+            return isPalindromeDescendant(sb.toString());
         } else {
             return false;
         }
@@ -24,10 +29,9 @@ public class Task5 {
 
     public static boolean isPalindrome(int num) {
         int result = 0;
-        for (int b = num; b > 0; ) {
-            result *= 10;
-            result += b % 10;
-            b /= 10;
+        for (int b = num; b > 0; b /= TEN) {
+            result *= TEN;
+            result += b % TEN;
         }
         return result == num;
     }
