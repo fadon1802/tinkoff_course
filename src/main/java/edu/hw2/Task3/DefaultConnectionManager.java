@@ -7,7 +7,7 @@ public class DefaultConnectionManager implements ConnectionManager {
 
     @Override
     public Connection getConnection() {
-        if(RANDOMIZER.nextInt(0, 3) == 0){
+        if (RANDOMIZER.nextInt(0, 3) == 0) {
             return new Connection.StableConnection();
         }
         return new Connection.FaultyConnection();

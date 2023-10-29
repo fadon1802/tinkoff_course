@@ -10,7 +10,7 @@ public sealed interface Connection extends AutoCloseable {
 
         @Override
         public void execute(String command) {
-            if (RANDOMIZER.nextInt(0, 2) == 0){
+            if (RANDOMIZER.nextInt(0, 2) == 0) {
                 throw new ConnectionException(1, "bad execute");
             }
         }

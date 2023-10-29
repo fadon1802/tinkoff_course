@@ -1,9 +1,12 @@
 package edu.hw2.Task1;
 
-
-import edu.hw2.Task1.Expr.*;
+import edu.hw2.Task1.Expr.Addition;
+import edu.hw2.Task1.Expr.Constant;
+import edu.hw2.Task1.Expr.Exponent;
+import edu.hw2.Task1.Expr.Multiplication;
+import edu.hw2.Task1.Expr.Negate;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ExprTest {
     @Test

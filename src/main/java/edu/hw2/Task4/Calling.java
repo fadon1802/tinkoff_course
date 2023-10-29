@@ -1,9 +1,10 @@
 package edu.hw2.Task4;
 
 public class Calling {
-    private Calling(){
+    private Calling() {
     }
-    public static CallingInfo callingInfo(){
+
+    public static CallingInfo callingInfo() {
         StackTraceElement[] elements = new Throwable().getStackTrace();
         var thisCall = elements[0];
         var className = thisCall.getClassName();
