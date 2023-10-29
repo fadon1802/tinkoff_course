@@ -5,6 +5,7 @@ import java.util.Random;
 public class DefaultConnectionManager implements ConnectionManager {
     private static final Random RANDOMIZER = new Random();
 
+    @SuppressWarnings("MagicNumber")
     @Override
     public Connection getConnection() {
         if (RANDOMIZER.nextInt(0, 3) == 0) {

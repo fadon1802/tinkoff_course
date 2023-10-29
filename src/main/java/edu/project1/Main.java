@@ -6,6 +6,7 @@ public class Main {
     private Main() {
     }
 
+    @SuppressWarnings("MagicNumber")
     public static void main(String[] args) throws IOException {
         var dict = new GameDictionary();
         var ch = new ConsoleHangman(new Session(dict.randomWord(), 3));
