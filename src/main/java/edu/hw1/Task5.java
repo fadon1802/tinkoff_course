@@ -7,7 +7,7 @@ public class Task5 {
     private static final int TEN = 10;
 
     public static boolean isPalindromeDescendant(String strNum) {
-        if (isPalindrome(Integer.parseInt(strNum))) {
+        if (isPalindrome(strNum)) {
             return true;
         } else if (strNum.length() > 1) {
             var sb = new StringBuilder();
@@ -27,12 +27,13 @@ public class Task5 {
         }
     }
 
-    public static boolean isPalindrome(int num) {
+    public static boolean isPalindrome(String strNum) {
         int result = 0;
-        for (int b = num; b > 0; b /= TEN) {
+        int intNum = Integer.parseInt(strNum);
+        for (int b = intNum; b > 0; b /= TEN) {
             result *= TEN;
             result += b % TEN;
         }
-        return result == num;
+        return result == intNum;
     }
 }
