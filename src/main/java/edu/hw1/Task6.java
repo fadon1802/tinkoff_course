@@ -13,8 +13,8 @@ public class Task6 {
     private static final int MAX_NUMBER = 9999;
 
     public static int countK(String strNumber) {
-        if (Integer.parseInt(strNumber) < MIN_NUMBER || Integer.parseInt(strNumber) > MAX_NUMBER ||
-            Integer.parseInt(strNumber) % DENOMINATOR == 0) {
+        if (Integer.parseInt(strNumber) < MIN_NUMBER || Integer.parseInt(strNumber) > MAX_NUMBER
+            || Integer.parseInt(strNumber) % DENOMINATOR == 0) {
             return -1;
         }
 
