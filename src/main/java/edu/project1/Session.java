@@ -11,7 +11,7 @@ public class Session {
 
     public Session(String answer, int maxAttempts) {
         this.answer = answer;
-        if (answer.isEmpty() || answer.equals(" ")){
+        if (answer.isEmpty() || answer.equals(" ")) {
             throw new RuntimeException("Incorrect word");
         }
         this.maxAttempts = maxAttempts;

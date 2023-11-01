@@ -1,8 +1,7 @@
 package edu.project1;
 
-import org.jetbrains.annotations.Nullable;
 import java.util.Scanner;
-
+import org.jetbrains.annotations.Nullable;
 import static java.lang.System.out;
 
 public class ConsoleHangman {
@@ -31,7 +30,7 @@ public class ConsoleHangman {
             }
             out.println("The word: " + String.join("", new String(res.state())));
             printState(res);
-            if (firstGameState == null){
+            if (firstGameState == null) {
                 firstGameState = res;
             }
 
