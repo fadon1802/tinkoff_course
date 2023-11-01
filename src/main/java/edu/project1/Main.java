@@ -1,15 +1,13 @@
 package edu.project1;
 
-import java.io.IOException;
-
 public class Main {
     private Main() {
     }
 
     @SuppressWarnings("MagicNumber")
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         var dict = new GameDictionary();
-        var ch = new ConsoleHangman(new Session(dict.randomWord(), 3));
-        ch.run();
+        var ch = new ConsoleHangman(new Session(dict.randomWord(), 1));
+        ch.run(null);
     }
 }

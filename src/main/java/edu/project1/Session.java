@@ -11,6 +11,9 @@ public class Session {
 
     public Session(String answer, int maxAttempts) {
         this.answer = answer;
+        if (answer.isEmpty() || answer.equals(" ")){
+            throw new RuntimeException("Incorrect word");
+        }
         this.maxAttempts = maxAttempts;
         var userAns = new char[answer.length()];
         for (var i = 0; i < answer.length(); i++) {
@@ -19,13 +22,8 @@ public class Session {
         this.userAnswer = userAns;
     }
 
-    public char[] getUserAnswer() {
-        return userAnswer;
-    }
-
     @SuppressWarnings("ReturnCount")
-    @NotNull GuessResult guess(String guess) throws Exception {
-
+    @NotNull GuessResult guess(String guess) {
         if (answer.contains(guess) && !new String(userAnswer).contains(guess)) {
             var indexes = new ArrayList<Integer>();
             for (var i = 0; i < answer.length(); i++) {
@@ -49,14 +47,14 @@ public class Session {
 
         if (!answer.contains(guess)) {
             attempts++;
-            if (attempts == maxAttempts) {
+            if (attempts >= maxAttempts) {
                 return new GuessResult.Defeat(userAnswer, attempts, maxAttempts);
             }
 
             return new GuessResult.FailedGuess(userAnswer, attempts, maxAttempts);
         }
 
-        throw new Exception("Something wrong");
+        throw new RuntimeException("Something wrong");
     }
 
     @NotNull GuessResult giveUp() {
