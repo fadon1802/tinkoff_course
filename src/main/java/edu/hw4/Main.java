@@ -24,17 +24,16 @@ public final class Main {
     }
 
     public static void main(String[] args) {
+        @SuppressWarnings("MagicNumber")
         var animals = new ArrayList<Animal>() {{
             add(new Animal("", Type.CAT, Sex.F, 5, 20, 4, true));
             add(new Animal("Margarita", Type.CAT, Sex.M, 10, 20, 4, true));
             add(new Animal("rex", Type.DOG, Sex.M, 6, 30, 15, true));
             add(new Animal("Goldfish", Type.FISH, Sex.M, 5, 5, 2, false));
             add(new Animal("Сrow", Type.BIRD, Sex.F, 3, 10, 3, false));
-            add(new Animal("Paukan", Type.SPIDER, Sex.M, 1, 2, 1, true));
+            add(new Animal("Pauk", Type.SPIDER, Sex.M, 1, 2, 1, true));
             add(new Animal("Paukan", Type.SPIDER, Sex.F, 2, 3, 1, true));
         }};
-
-        System.out.println(task19(animals));
     }
 
     static List<Animal> task1(List<Animal> animalList) {
@@ -113,6 +112,7 @@ public final class Main {
             .toList();
     }
 
+    @SuppressWarnings("MagicNumber")
     static List<Animal> task11(List<Animal> animalList) {
         return animalList
             .stream()
@@ -174,10 +174,13 @@ public final class Main {
             .orElse(null);
     }
 
-    static Map<String, Set<ValidationError>> task19 (List<Animal> animalList){
+    static Map<String, Set<ValidationError>> task19(List<Animal> animalList) {
         return animalList.stream()
             .filter(a -> !ValidationError.validateName(a.name()).isEmpty())
-            .collect(groupingBy(Animal::name, flatMapping(a -> ValidationError.validateName(a.name()).stream(), Collectors.toSet())));
+            .collect(groupingBy(
+                Animal::name,
+                flatMapping(a -> ValidationError.validateName(a.name()).stream(), Collectors.toSet())
+            ));
     }
 }
 
