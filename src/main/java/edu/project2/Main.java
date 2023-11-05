@@ -1,8 +1,10 @@
 package edu.project2;
 
 public class Main {
-    public static void main(String[] args) {
+    private Main() {
+    }
 
+    public static void main(String[] args) {
     }
 }
 
