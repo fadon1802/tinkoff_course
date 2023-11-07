@@ -1,6 +1,7 @@
 package edu.project2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public final class Maze {
@@ -22,8 +23,8 @@ public final class Maze {
 
     public static Cell[][] convertToCellGrid(int[][] grid) {
         var cellGrid = new Cell[grid.length][grid[0].length];
-        for (var row = 0; row < grid.length; row++){
-            for (var col = 0; col < grid[0].length; col++){
+        for (var row = 0; row < grid.length; row++) {
+            for (var col = 0; col < grid[0].length; col++) {
                 cellGrid[row][col] = new Cell(row, col, Cell.Type.values()[grid[row][col]]);
             }
         }
@@ -31,11 +32,15 @@ public final class Maze {
         return cellGrid;
     }
 
-    public int height(){
+    public Cell[][] getGrid() {
+        return Arrays.copyOf(grid, grid.length);
+    }
+
+    public int height() {
         return height;
     }
 
-    public int width(){
+    public int width() {
         return width;
     }
 
