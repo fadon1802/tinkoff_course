@@ -9,6 +9,9 @@ import java.util.List;
 public class Task2 {
     private static final int DAYS_IN_WEEK = 7;
 
+    private Task2() {
+    }
+
     public static List<String> getFridays13th(int year) {
         var fridays13th = new ArrayList<String>();
         var date = LocalDate.of(year, Month.JANUARY, 1);
