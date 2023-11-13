@@ -11,5 +11,4 @@ public class Task4 {
         var matcher = pattern.matcher(string);
         return matcher.matches();
     }
-
 }
