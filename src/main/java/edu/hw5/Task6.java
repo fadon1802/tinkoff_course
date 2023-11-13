@@ -12,6 +12,5 @@ public class Task6 {
         Pattern pattern = Pattern.compile(regex);
         var matcher = pattern.matcher(string);
         return matcher.matches();
-
     }
 }

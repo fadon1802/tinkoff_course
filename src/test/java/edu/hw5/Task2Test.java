@@ -17,7 +17,7 @@ class Task2Test {
     }
 
     @Test
-    void getNextFriday13() {
-        assertEquals("2023-10-13", Task2.getNextFriday13("2023-09-01"));
+    void getNextFriday13th() {
+        assertEquals("2023-10-13", Task2.getNextFriday13th("2023-09-01"));
     }
 }

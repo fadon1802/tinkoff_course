@@ -15,8 +15,7 @@ public class ParserNormal extends Parser {
         LocalDate parsed;
         try {
             parsed = LocalDate.parse(date);
-        }
-        catch (DateTimeParseException exception) {
+        } catch (DateTimeParseException exception) {
             return nextParser.parseDate(date);
         }
 

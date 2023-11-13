@@ -35,15 +35,16 @@ public class Task2 {
     }
 
     @SuppressWarnings("MagicNumber")
-    public static String getNextFriday13(String date) {
+    public static String getNextFriday13th(String date) {
         var localDate = LocalDate.parse(date);
         TemporalAdjuster adjuster = t -> {
-            while (t.get(ChronoField.DAY_OF_WEEK) != 5
-                || t.get(ChronoField.DAY_OF_MONTH) != 13) {
-                t = t.plus(1, ChronoUnit.DAYS);
+            var temp = t;
+            while (temp.get(ChronoField.DAY_OF_WEEK) != 5
+                || temp.get(ChronoField.DAY_OF_MONTH) != 13) {
+                temp = temp.plus(1, ChronoUnit.DAYS);
             }
 
-            return t;
+            return temp;
         };
 
         return localDate.with(adjuster).toString();
