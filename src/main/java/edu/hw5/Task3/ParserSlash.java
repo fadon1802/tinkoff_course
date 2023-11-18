@@ -5,17 +5,16 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Optional;
 
-public class ParserNormal extends Parser {
-
-    public ParserNormal(Parser nextParser) {
+public class ParserSlash extends Parser {
+    public ParserSlash(Parser nextParser) {
         super(nextParser);
     }
 
     @Override
     public Optional<LocalDate> parseDate(String date) {
         LocalDate parsed;
-        DateTimeFormatter f1 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        DateTimeFormatter f2 = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        DateTimeFormatter f1 = DateTimeFormatter.ofPattern("d/M/yyyy");
+        DateTimeFormatter f2 = DateTimeFormatter.ofPattern("d/M/yy");
         try {
             parsed = LocalDate.parse(date, f1);
         } catch (DateTimeParseException notFirst) {

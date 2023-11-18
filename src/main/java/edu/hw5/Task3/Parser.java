@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 public abstract class Parser {
-    public Parser nextParser;
+    protected final Parser nextParser;
 
     public Parser(Parser nextParser) {
         this.nextParser = nextParser;
