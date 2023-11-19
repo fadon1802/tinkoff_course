@@ -16,6 +16,7 @@ import org.jetbrains.annotations.Nullable;
 public class DiskMap implements Map<String, String> {
     private final Path path;
     private final HashMap<String, String> map = new HashMap<>();
+
     public DiskMap(String path) throws IOException {
         this.path = Path.of(path);
         if (!Files.isWritable(this.path)) {
@@ -23,14 +24,16 @@ public class DiskMap implements Map<String, String> {
         }
     }
 
+    @SuppressWarnings({"MagicNumber"})
     public void loadFromDisk() throws IOException {
         ByteBuffer buffer = ByteBuffer.allocate(48);
         var fileChannel = FileChannel.open(path, StandardOpenOption.CREATE);
         int bytesRead = fileChannel.read(buffer);
         var sb = new StringBuilder();
+
         while (bytesRead != -1) {
             buffer.flip();
-            while(buffer.hasRemaining()) {
+            while (buffer.hasRemaining()) {
                 sb.append((char) buffer.get());
             }
 

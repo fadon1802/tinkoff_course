@@ -7,6 +7,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CloneFile {
+    private CloneFile() {
+    }
+
+    @SuppressWarnings({"MultipleStringLiterals"})
     public static Path cloneFile(Path path) throws IOException {
         var name = path.toString();
         var regexFirstCopy = "^.* - копия\\..*$";
